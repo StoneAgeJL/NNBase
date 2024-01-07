@@ -92,7 +92,7 @@ torchrun \
         ./configs/xxx.yaml \ # 此次训练/评估实验的配置文件
         --dist_type=ddp # 记得加上, 用于在torchrun分布式训练下修改代码里的一些行为
 ``` 
-- deepspeed分布式:
+- `deepspeed`分布式:
     - TBD 待更新, 更加适合大模型的训练和部署
 
 # 依赖环境
@@ -102,4 +102,4 @@ torchrun \
 - 缺啥装啥, 上述txt环境是基于python 3.9的
 
 # 其他
-- 有问题欢迎issure或者邮箱联系我
+- 有问题欢迎Issues 或者 邮箱联系我

@@ -1,0 +1,44 @@
+data:
+  training:
+    name: "AVARate"
+    mode: "train"
+    data_path: "./data/AVA/"
+  evaluate:
+    name: "AVARate"
+    mode: "val"
+    data_path: "./data/AVA/"
+
+model:
+  name: "RATOR"
+  input_size: 512
+
+pipe:
+  name: "Basepipe"
+  snapshot_path: "./experiments/ckpt/"
+  tag: "ava_predict"
+  batch_size: 64
+  num_epoch: 1
+  gradient_accumulation_steps: 1
+  save_every: 3
+  save_every_iter: null
+  max_num_save: 500
+  eval_every: 3
+  dist_type:
+    name: null
+    device: 0
+  optim:
+    name: "AdamW"
+    lr: 1.0e-3
+    eps: 1.0e-8
+    betas: [0.9, 0.98]
+  lr_scheduler:
+    name: "StepLR"
+    step_size: 17
+    gamma: 0.7
+
+log:
+  logger_type: "tensorboard"
+  enable_epoch_log: True
+  enable_iter_log: False
+  log_every: 3
+  output_path: "./experiments/mess/"

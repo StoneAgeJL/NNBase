@@ -1,4 +1,19 @@
 # Codebase of NN-training based on Pytorch
+# 项目clone
+```
+git lfs install
+GIT_LFS_SKIP_SMUDGE=1 git clone git@github.com:StoneAgeJL/NNBase.git
+cd NNBase
+git lfs pull
+```
+- 上述 `git lfs pull` 慢的话, 可直接下载 `./data/AVA/clip_b32.tar` 到本地对应路径
+
+# 样例测试
+- 单机单卡
+```
+python training.py ./configs/ava.yaml
+```
+
 # 各文件夹介绍
 ```
 .
